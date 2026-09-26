@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | AI+ Platform Prototype</title>
+  <meta name="description" content="Create a demonstration AI+ account and explore the digital tasks prototype.">
+  <link rel="icon" type="image/jpeg" href="assets/images/logo/logo.jpeg">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="ambient-glow glow-top-center"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="AI+ Home">
+        <img src="assets/images/logo/logo_transparent.png" alt="AI+ Logo" class="brand-logo-img">
+        <span class="brand-text">AI<span class="brand-plus">+</span></span>
+        <span class="brand-badge">PROTOTYPE</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="tasks.html" class="nav-link">Tasks</a></li>
+        <li><a href="wallet.html" class="nav-link">Wallet</a></li>
+        <li><a href="upload.html" class="nav-link">Upload</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer">
+    <ul class="mobile-drawer-menu">
+      <li><a href="index.html" class="mobile-drawer-link">Home</a></li>
+      <li><a href="tasks.html" class="mobile-drawer-link">Tasks</a></li>
+      <li><a href="wallet.html" class="mobile-drawer-link">Wallet</a></li>
+      <li><a href="upload.html" class="mobile-drawer-link">Upload</a></li>
+      <li><a href="about.html" class="mobile-drawer-link">About</a></li>
+    </ul>
+    <div class="mobile-drawer-actions">
+      <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+    </div>
+  </div>
+
+  <main class="auth-page-wrapper">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="auth-logo">
+          <img src="assets/images/logo/logo_transparent.png" alt="AI+ Logo" style="width: 44px; height: 44px; border-radius: 10px; object-fit: contain; background: rgba(255,255,255,0.06); padding: 4px;">
+          <span style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: #FFF;">
+            AI<span style="color: var(--accent-green);">+</span>
+          </span>
+        </div>
+        <h1 class="auth-title">Create Your AI+ Account</h1>
+        <p class="auth-subtitle">Join the digital task and rewards concept prototype today.</p>
+      </div>
+
+      <!-- Demo Register Form -->
+      <form id="demo-register-form">
+        <div class="form-group">
+          <label for="reg-name" class="form-label">Full Name</label>
+          <input type="text" id="reg-name" class="form-input" placeholder="e.g. Alex Sharma" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-email" class="form-label">Email Address</label>
+          <input type="email" id="reg-email" class="form-input" placeholder="alex@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-mobile" class="form-label">Mobile Number</label>
+          <input type="tel" id="reg-mobile" class="form-input" placeholder="+91 98765 43210" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-password" class="form-label">Password</label>
+          <input type="password" id="reg-password" class="form-input" placeholder="Create a password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          Create Account
+          <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+        </button>
+      </form>
+
+      <div class="auth-footer-text">
+        Already have an account?
+        <a href="login.html">Login →</a>
+      </div>
+
+      <div style="margin-top: 24px; padding: 12px; background: rgba(255, 255, 255, 0.02); border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); text-align: center;">
+        <span style="font-size: 0.72rem; color: var(--text-subtle);">
+          STATIC UI DEMO • NO REAL ACCOUNTS OR SENSITIVE DATA STORAGE
+        </span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Registration Feedback Modal -->
+  <div class="modal-backdrop" id="reg-demo-modal" role="dialog" aria-modal="true" aria-labelledby="modal-reg-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" data-close-modal="reg-demo-modal" aria-label="Close Modal">
+        <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+      </button>
+
+      <div class="modal-icon-badge">
+        <i data-lucide="sparkles" style="width: 28px; height: 28px;"></i>
+      </div>
+
+      <h3 class="modal-title" id="modal-reg-title">Account Created (Demo)</h3>
+
+      <p class="modal-text">
+        Welcome to the AI+ platform prototype! Your demo profile has been simulated. You can now explore tasks, inspect the wallet dashboard, and test submitting work.
+      </p>
+
+      <div class="modal-actions">
+        <a href="tasks.html" class="btn btn-primary" style="flex: 1;">Explore Tasks Now →</a>
+        <a href="wallet.html" class="btn btn-secondary">Open Wallet</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p style="font-size: 0.8rem; color: var(--text-subtle);">
+        © 2026 AI+. Demonstration & Prototype Website.
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('demo-register-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      openModal('reg-demo-modal');
+    });
+  </script>
+</body>
+</html>

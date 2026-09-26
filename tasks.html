@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Tasks | AI+ Digital Rewards</title>
+  <meta name="description" content="Discover simple digital activities, app testing, surveys, and content reviews with illustrative rewards.">
+  <link rel="icon" type="image/jpeg" href="assets/images/logo/logo.jpeg">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Ambient Glow -->
+  <div class="ambient-glow glow-top-center"></div>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="AI+ Home">
+        <img src="assets/images/logo/logo_transparent.png" alt="AI+ Logo" class="brand-logo-img">
+        <span class="brand-text">AI<span class="brand-plus">+</span></span>
+        <span class="brand-badge">PROTOTYPE</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="tasks.html" class="nav-link active">Tasks</a></li>
+        <li><a href="wallet.html" class="nav-link">Wallet</a></li>
+        <li><a href="upload.html" class="nav-link">Upload</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-nav-login">Login</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer">
+    <ul class="mobile-drawer-menu">
+      <li><a href="index.html" class="mobile-drawer-link">Home</a></li>
+      <li><a href="tasks.html" class="mobile-drawer-link active">Tasks</a></li>
+      <li><a href="wallet.html" class="mobile-drawer-link">Wallet</a></li>
+      <li><a href="upload.html" class="mobile-drawer-link">Upload</a></li>
+      <li><a href="about.html" class="mobile-drawer-link">About</a></li>
+    </ul>
+    <div class="mobile-drawer-actions">
+      <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+      <a href="register.html" class="btn btn-primary btn-block">Get Started</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <div class="pill-badge">OPPORTUNITY CATALOG</div>
+        <h1 class="page-title">Explore Tasks</h1>
+        <p class="page-subtitle">Discover simple digital activities and explore example rewards across 16 sample categories.</p>
+      </div>
+    </section>
+
+    <!-- Filters & Search Toolbar -->
+    <div class="container">
+      <!-- Task Execution Video Demonstration (Record2.mp4) -->
+      <div class="mini-video-card">
+        <div>
+          <div class="pill-badge">VIDEO DEMONSTRATION</div>
+          <h2 style="font-size: 1.8rem; margin-bottom: 12px; letter-spacing: -0.02em;">See How Simple Tasks Work</h2>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+            Watch a live screen recording showing step-by-step instruction review, task execution, and instant submission verification.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-lightgray);">
+              <i data-lucide="check-circle-2" style="width: 16px; height: 16px; color: var(--accent-green);"></i>
+              No prior experience needed
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-lightgray);">
+              <i data-lucide="clock" style="width: 16px; height: 16px; color: var(--accent-green);"></i>
+              3 to 15 minutes average
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-video-box video-wrapper-smart">
+          <!-- Smart Logo Loader -->
+          <div class="video-logo-loader">
+            <div class="video-loader-brand">
+              <img src="assets/images/logo/logo_transparent.png" alt="AI+ Preloader" class="video-loader-img">
+            </div>
+            <div class="video-loader-indicator">
+              <div class="video-loader-spinner"></div>
+              <span class="video-loader-text">Loading Guide...</span>
+            </div>
+          </div>
+
+          <video class="video-smart-element" autoplay muted loop playsinline preload="auto" poster="assets/images/logo/poster_dark.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            <source src="assets/videos/record2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="tasks-filter-bar">
+        <div class="filter-pills">
+          <button class="filter-pill active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="social">Social</button>
+          <button class="filter-pill" data-filter="survey">Survey</button>
+          <button class="filter-pill" data-filter="testing">Testing</button>
+          <button class="filter-pill" data-filter="data">Data</button>
+          <button class="filter-pill" data-filter="research">Research</button>
+        </div>
+
+        <div class="search-box">
+          <i data-lucide="search" class="search-icon-inside" style="width: 18px; height: 18px;"></i>
+          <input type="text" id="task-search-input" class="search-input" placeholder="Search tasks..." aria-label="Search tasks">
+        </div>
+      </div>
+
+      <!-- 16 Comprehensive Demo Task Cards Grid -->
+      <div class="tasks-grid">
+        <!-- 1. Social Media Follow -->
+        <div class="task-card" data-category="social">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Social Media</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 5 min</span>
+            </div>
+            <h3 class="task-title">Follow & Engage on Social</h3>
+            <p class="task-desc">Follow the verified partner profile and react to the pinned informational post.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹20</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 2. Survey -->
+        <div class="task-card" data-category="survey">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Survey</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 8 min</span>
+            </div>
+            <h3 class="task-title">Consumer Preference Survey</h3>
+            <p class="task-desc">Answer 10 short multiple-choice questions on e-commerce shopping preferences.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹35</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 3. App Testing -->
+        <div class="task-card" data-category="testing">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">App Testing</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 12 min</span>
+            </div>
+            <h3 class="task-title">Beta App Navigation Check</h3>
+            <p class="task-desc">Test the new onboarding flow on Android/iOS and verify smooth button transitions.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹50</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 4. Website Visit -->
+        <div class="task-card" data-category="testing">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Website Visit</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 4 min</span>
+            </div>
+            <h3 class="task-title">Landing Page Inspection</h3>
+            <p class="task-desc">Visit the designated product page, confirm font rendering, and submit load speed note.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹15</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 5. Data Entry -->
+        <div class="task-card" data-category="data">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Data Entry</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 10 min</span>
+            </div>
+            <h3 class="task-title">Catalog Tagging Entry</h3>
+            <p class="task-desc">Categorize 15 product items by category, price tier, and key search keywords.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹30</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 6. Content Review -->
+        <div class="task-card" data-category="data">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Content Review</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 7 min</span>
+            </div>
+            <h3 class="task-title">Editorial Proofreading</h3>
+            <p class="task-desc">Review a 200-word product description for grammar and readability guidelines.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹25</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 7. Image Tagging -->
+        <div class="task-card" data-category="data">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Image Tagging</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 6 min</span>
+            </div>
+            <h3 class="task-title">AI Dataset Object Annotation</h3>
+            <p class="task-desc">Tag 8 sample photos with appropriate bounding labels (vehicle, person, tree).</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹40</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 8. Feedback -->
+        <div class="task-card" data-category="survey">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Feedback</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 5 min</span>
+            </div>
+            <h3 class="task-title">Mobile UI Usability Feedback</h3>
+            <p class="task-desc">Provide 2 sentences of constructive feedback regarding checkout button placement.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹20</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 9. Product Research -->
+        <div class="task-card" data-category="research">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Product Research</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 15 min</span>
+            </div>
+            <h3 class="task-title">Competitive Price Lookup</h3>
+            <p class="task-desc">Search current listed retail prices for 3 common home appliance models online.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹45</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 10. Video Review -->
+        <div class="task-card" data-category="social">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Video Review</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 6 min</span>
+            </div>
+            <h3 class="task-title">Short Video Quality Rating</h3>
+            <p class="task-desc">Watch a 45-second instructional video clip and rate the audio synchronization.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹25</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 11. Typing Task -->
+        <div class="task-card" data-category="data">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Typing Task</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 8 min</span>
+            </div>
+            <h3 class="task-title">Receipt Snippet Transcription</h3>
+            <p class="task-desc">Transcribe printed invoice dates, vendor titles, and total line items accurately.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹30</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 12. Search Task -->
+        <div class="task-card" data-category="research">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Search Task</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 5 min</span>
+            </div>
+            <h3 class="task-title">Search Query Evaluation</h3>
+            <p class="task-desc">Verify if a search query results in relevant top 3 official domain answers.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹20</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 13. Form Entry -->
+        <div class="task-card" data-category="data">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Form Entry</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 9 min</span>
+            </div>
+            <h3 class="task-title">Digital Registration Mock Test</h3>
+            <p class="task-desc">Fill out a sample newsletter signup questionnaire to check validation errors.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹28</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 14. Content Checking -->
+        <div class="task-card" data-category="research">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Content Checking</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 7 min</span>
+            </div>
+            <h3 class="task-title">Hyperlink Broken Link Check</h3>
+            <p class="task-desc">Click 5 external documentation citations to confirm none return 404 errors.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹22</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 15. Basic Research -->
+        <div class="task-card" data-category="research">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Basic Research</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 14 min</span>
+            </div>
+            <h3 class="task-title">Directory Verification</h3>
+            <p class="task-desc">Locate public customer service contact information for 2 technology portals.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹38</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+
+        <!-- 16. Social Media Share -->
+        <div class="task-card" data-category="social">
+          <div>
+            <div class="task-top-meta">
+              <span class="task-cat-badge">Social Media</span>
+              <span class="task-time-badge"><i data-lucide="clock" style="width: 14px; height: 14px;"></i> 4 min</span>
+            </div>
+            <h3 class="task-title">Share Informational Post</h3>
+            <p class="task-desc">Share a public technology awareness graphic to your network and capture proof.</p>
+          </div>
+          <div class="task-bottom-meta">
+            <div class="task-reward-info">
+              <span style="font-size: 0.76rem; color: var(--text-subtle);">Example Reward</span>
+              <span class="task-reward-num">₹18</span>
+            </div>
+            <button class="btn btn-secondary btn-sm btn-view-task">View Task →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       DEMONSTRATION TASK MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop" id="task-demo-modal" role="dialog" aria-modal="true" aria-labelledby="modal-task-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" data-close-modal="task-demo-modal" aria-label="Close Modal">
+        <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+      </button>
+
+      <div class="modal-icon-badge">
+        <i data-lucide="info" style="width: 28px; height: 28px;"></i>
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+        <span class="task-cat-badge" id="modal-task-category">Social Media</span>
+        <span class="task-time-badge" id="modal-task-time">5 min</span>
+      </div>
+
+      <h3 class="modal-title" id="modal-task-title">Task Details</h3>
+
+      <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-card); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px;">Illustrative Reward Rate</div>
+        <div style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--accent-green);" id="modal-task-reward">₹25</div>
+      </div>
+
+      <p class="modal-text">
+        <strong>Demonstration Notice:</strong><br>
+        This is an illustrative demonstration task preview. Task execution, tracking, and backend completion logic are not active on this static UI prototype.
+      </p>
+
+      <div class="modal-actions">
+        <a href="upload.html" class="btn btn-primary" style="flex: 1;">
+          Try Demo Upload
+          <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+        </a>
+        <button class="btn btn-secondary" data-close-modal="task-demo-modal">Dismiss</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-link" style="margin-bottom: 12px;">
+            <img src="assets/images/logo/logo_transparent.png" alt="AI+ Logo" class="brand-logo-img">
+            <span class="brand-text">AI<span class="brand-plus">+</span></span>
+          </a>
+          <p>Simple digital tasks. Transparent rewards concept. Engineered for modern online participation.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tasks.html">Tasks</a></li>
+            <li><a href="wallet.html">Wallet</a></li>
+            <li><a href="upload.html">Upload Proof</a></li>
+            <li><a href="about.html">About AI+</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Account</h5>
+          <ul class="footer-links">
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="wallet.html">Earnings</a></li>
+            <li><a href="upload.html">Submissions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legal & Info</h5>
+          <ul class="footer-links">
+            <li><a href="about.html#transparency">Disclaimer</a></li>
+            <li><a href="about.html#transparency">Terms of Service</a></li>
+            <li><a href="about.html#transparency">Privacy Policy</a></li>
+            <li><a href="about.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 AI+. All rights reserved.</div>
+        <div class="footer-demo-pill">Informational Static UI Prototype • Not Real Financial Services</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/tasks.js"></script>
+</body>
+</html>
