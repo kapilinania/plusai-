@@ -50,34 +50,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 5. Mobile Navigation Drawer
+  // 5. Mobile Navigation Drawer Controller
   const mobileToggle = document.querySelector('.mobile-nav-toggle');
   const mobileDrawer = document.querySelector('.mobile-drawer');
+
   if (mobileToggle && mobileDrawer) {
     const toggleMenu = (open) => {
       const isOpen = open !== undefined ? open : !mobileDrawer.classList.contains('open');
       mobileDrawer.classList.toggle('open', isOpen);
+      mobileToggle.classList.toggle('active', isOpen);
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       document.body.style.overflow = isOpen ? 'hidden' : '';
-      
-      const bars = mobileToggle.querySelectorAll('span');
-      if (bars.length === 3) {
-        if (isOpen) {
-          bars[0].style.transform = 'translateY(7px) rotate(45deg)';
-          bars[1].style.opacity = '0';
-          bars[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-        } else {
-          bars[0].style.transform = 'none';
-          bars[1].style.opacity = '1';
-          bars[2].style.transform = 'none';
-        }
+
+      if (isOpen && typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
       }
     };
 
-    mobileToggle.addEventListener('click', () => toggleMenu());
-    
-    // Close on clicking mobile link
-    mobileDrawer.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => toggleMenu(false));
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    // Close on any close button or backdrop click
+    document.querySelectorAll('[data-close-drawer]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu(false);
+      });
+    });
+
+    // Close on clicking any link inside the mobile drawer
+    mobileDrawer.querySelectorAll('.mobile-drawer-link, .mobile-drawer-actions a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggleMenu(false);
+      });
+    });
+
+    // Close on Escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+        toggleMenu(false);
+      }
+    });
+
+    // Automatically close drawer and restore scroll when resized to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1024 && mobileDrawer.classList.contains('open')) {
+        toggleMenu(false);
+      }
     });
   }
 

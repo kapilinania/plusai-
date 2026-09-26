@@ -29,15 +29,15 @@
 @media (max-width: 1024px) {
   /* Navigation */
   .nav-menu {
-    display: none;
+    display: none !important;
   }
   
   .btn-nav-login {
-    display: none;
+    display: none !important;
   }
   
   .mobile-nav-toggle {
-    display: flex;
+    display: flex !important;
   }
 
   /* Bento Grids */
@@ -93,8 +93,17 @@
 
 /* Tablet Portrait (max-width: 768px) */
 @media (max-width: 768px) {
+  .site-header {
+    padding: 12px 0;
+  }
+
+  .btn-nav-cta {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
   .hero-section {
-    padding-top: 140px;
+    padding-top: 130px;
     padding-bottom: 70px;
   }
   
@@ -188,9 +197,43 @@
     display: none;
   }
 }
+}
+
+/* Mobile Medium (max-width: 640px) */
+@media (max-width: 640px) {
+  /* In header bar, keep only brand and hamburger toggle to prevent any crowding */
+  .nav-actions .btn,
+  .nav-actions .btn-primary,
+  .nav-actions .btn-secondary,
+  .btn-nav-cta {
+    display: none !important;
+  }
+
+  .nav-actions {
+    gap: 0;
+  }
+}
 
 /* Mobile Standard (max-width: 480px) */
 @media (max-width: 480px) {
+  .site-header {
+    padding: 10px 0;
+  }
+
+  .nav-container {
+    gap: 8px;
+  }
+
+  /* Hide PROTOTYPE badge in top header on narrow mobile to keep brand uncluttered */
+  .brand-link .brand-badge {
+    display: none !important;
+  }
+
+  .mobile-drawer-panel {
+    max-width: 100%;
+    border-left: none;
+  }
+
   .container {
     padding-left: 16px;
     padding-right: 16px;

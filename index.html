@@ -42,7 +42,7 @@
       <!-- Desktop Nav Actions -->
       <div class="nav-actions">
         <a href="login.html" class="btn-nav-login">Login</a>
-        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+        <a href="register.html" class="btn btn-primary btn-sm btn-nav-cta">Get Started</a>
         <button class="mobile-nav-toggle" aria-label="Toggle Navigation Drawer">
           <span></span>
           <span></span>
@@ -52,18 +52,88 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer">
-    <ul class="mobile-drawer-menu">
-      <li><a href="index.html" class="mobile-drawer-link active">Home</a></li>
-      <li><a href="tasks.html" class="mobile-drawer-link">Tasks</a></li>
-      <li><a href="wallet.html" class="mobile-drawer-link">Wallet</a></li>
-      <li><a href="upload.html" class="mobile-drawer-link">Upload</a></li>
-      <li><a href="about.html" class="mobile-drawer-link">About</a></li>
-    </ul>
-    <div class="mobile-drawer-actions">
-      <a href="login.html" class="btn btn-secondary btn-block">Login</a>
-      <a href="register.html" class="btn btn-primary btn-block">Get Started</a>
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-backdrop" data-close-drawer></div>
+    <div class="mobile-drawer-panel">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-link" aria-label="AI+ Home">
+          <img src="assets/images/logo/logo_transparent.png" alt="AI+ Logo" class="brand-logo-img">
+          <span class="brand-text">AI<span class="brand-plus">+</span></span>
+          <span class="brand-badge">PROTOTYPE</span>
+        </a>
+        <button class="mobile-drawer-close" aria-label="Close navigation" data-close-drawer>
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="mobile-drawer-content">
+        <ul class="mobile-drawer-nav">
+          <li>
+            <a href="index.html" class="mobile-drawer-link active">
+              <span class="drawer-link-left">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+              </span>
+              <i data-lucide="chevron-right" class="drawer-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="tasks.html" class="mobile-drawer-link">
+              <span class="drawer-link-left">
+                <i data-lucide="check-square"></i>
+                <span>Tasks</span>
+              </span>
+              <span class="drawer-badge">16 Active</span>
+              <i data-lucide="chevron-right" class="drawer-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="wallet.html" class="mobile-drawer-link">
+              <span class="drawer-link-left">
+                <i data-lucide="wallet"></i>
+                <span>Wallet</span>
+              </span>
+              <i data-lucide="chevron-right" class="drawer-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="upload.html" class="mobile-drawer-link">
+              <span class="drawer-link-left">
+                <i data-lucide="upload-cloud"></i>
+                <span>Upload Proof</span>
+              </span>
+              <i data-lucide="chevron-right" class="drawer-arrow"></i>
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="mobile-drawer-link">
+              <span class="drawer-link-left">
+                <i data-lucide="info"></i>
+                <span>About</span>
+              </span>
+              <i data-lucide="chevron-right" class="drawer-arrow"></i>
+            </a>
+          </li>
+        </ul>
+
+        <div class="mobile-drawer-actions">
+          <a href="register.html" class="btn btn-primary btn-block">
+            <span>Get Started Free</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="login.html" class="btn btn-secondary btn-block">
+            <span>Member Login</span>
+          </a>
+        </div>
+
+        <div class="mobile-drawer-footer">
+          <div class="drawer-status-chip">
+            <span class="pill-dot"></span>
+            <span>Platform Prototype • Demonstration Only</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
