@@ -1,377 +1,269 @@
 /**
- * AI+ Platform | Core JavaScript
- * Initializes Lenis smooth scrolling, custom cursor, navigation, modals, and Lucide icons.
+ * PLUS AI - Main Interactive JavaScript
+ * Handles mobile drawer, smooth navigation, task filtering, FAQ accordion,
+ * sticky mobile bar, and accessible modals.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Initialize Lucide Icons
-  if (typeof lucide !== 'undefined' && lucide.createIcons) {
-    lucide.createIcons();
+  // Elements
+  const navbar = document.querySelector('.navbar');
+  const btnHamburger = document.getElementById('btnHamburger');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const drawerOverlay = document.getElementById('drawerOverlay');
+  const btnCloseDrawer = document.getElementById('btnCloseDrawer');
+  const drawerLinks = document.querySelectorAll('.drawer-nav-list a');
+
+  // Modals
+  const loginModal = document.getElementById('loginModal');
+  const uploadModal = document.getElementById('uploadModal');
+  const modalOverlays = document.querySelectorAll('.modal-overlay');
+  const modalCloseButtons = document.querySelectorAll('.btn-modal-close');
+  const openLoginButtons = document.querySelectorAll('.btn-open-login');
+  const openUploadButtons = document.querySelectorAll('.btn-open-upload');
+
+  // Task Filters
+  const taskFilterBtns = document.querySelectorAll('.task-filter-btn');
+  const taskCards = document.querySelectorAll('.task-card');
+
+  // FAQ Accordion
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  // Sticky Mobile Action Bar
+  const mobileStickyBar = document.getElementById('mobileStickyBar');
+  const heroSection = document.getElementById('home');
+
+  // -------------------------------------------------------------------------
+  // Mobile Drawer Toggle
+  // -------------------------------------------------------------------------
+  function openDrawer() {
+    mobileDrawer.classList.add('active');
+    drawerOverlay.classList.add('active');
+    btnHamburger.classList.add('active');
+    btnHamburger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('drawer-open');
   }
 
-  // 2. Fast Native Scrolling & Snappy Anchor Handling
-  // Removed heavy Lenis dampening to deliver ultra-fast, responsive scrolling
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId && targetId !== '#') {
-        const targetEl = document.querySelector(targetId);
-        if (targetEl) {
-          e.preventDefault();
-          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+  function closeDrawer() {
+    mobileDrawer.classList.remove('active');
+    drawerOverlay.classList.remove('active');
+    btnHamburger.classList.remove('active');
+    btnHamburger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('drawer-open');
+  }
+
+  if (btnHamburger) {
+    btnHamburger.addEventListener('click', () => {
+      if (mobileDrawer.classList.contains('active')) {
+        closeDrawer();
+      } else {
+        openDrawer();
       }
+    });
+  }
+
+  if (btnCloseDrawer) btnCloseDrawer.addEventListener('click', closeDrawer);
+  if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeDrawer();
     });
   });
 
-  // 3. Sticky Navbar Blur on Scroll
-  const header = document.querySelector('.site-header');
-  if (header) {
-    const handleScroll = () => {
-      if (window.scrollY > 30) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+  // -------------------------------------------------------------------------
+  // Modals (Login & Upload)
+  // -------------------------------------------------------------------------
+  function openModal(modal) {
+    if (!modal) return;
+    modal.classList.add('active');
+    document.body.classList.add('modal-open');
+    const firstInput = modal.querySelector('input:not([type="hidden"])');
+    if (firstInput) {
+      setTimeout(() => firstInput.focus(), 150);
+    }
   }
 
-  // 4. Active Navigation Indicator
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-link, .mobile-drawer-link');
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+  }
+
+  openLoginButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeDrawer();
+      openModal(loginModal);
+    });
   });
 
-  // 5. Mobile Navigation Drawer Controller
-  const mobileToggle = document.querySelector('.mobile-nav-toggle');
-  const mobileDrawer = document.querySelector('.mobile-drawer');
-
-  if (mobileToggle && mobileDrawer) {
-    const toggleMenu = (open) => {
-      const isOpen = open !== undefined ? open : !mobileDrawer.classList.contains('open');
-      mobileDrawer.classList.toggle('open', isOpen);
-      mobileToggle.classList.toggle('active', isOpen);
-      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      
-      if (isOpen) {
-        document.body.style.overflow = 'hidden';
-        document.body.classList.add('drawer-open');
-      } else {
-        document.body.style.overflow = '';
-        document.body.classList.remove('drawer-open');
-      }
-
-      if (isOpen && typeof lucide !== 'undefined' && lucide.createIcons) {
-        lucide.createIcons();
-      }
-    };
-
-    mobileToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleMenu();
+  openUploadButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeDrawer();
+      openModal(uploadModal);
     });
+  });
 
-    // Close on any close button or backdrop click
-    document.querySelectorAll('[data-close-drawer]').forEach(el => {
-      el.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleMenu(false);
-      });
+  modalCloseButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modalOverlays.forEach(overlay => closeModal(overlay));
     });
+  });
 
-    // Close on clicking any link inside the mobile drawer
-    mobileDrawer.querySelectorAll('.mobile-drawer-link, .mobile-drawer-actions a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggleMenu(false);
-      });
-    });
-
-    // Close on Escape key press
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
-        toggleMenu(false);
+  modalOverlays.forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        closeModal(overlay);
       }
     });
-
-    // Automatically close drawer and restore scroll when resized to desktop
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 1024 && mobileDrawer.classList.contains('open')) {
-        toggleMenu(false);
-      }
-    });
-  }
-
-  // 6. Custom Cursor (Desktop Only)
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  if (!isTouchDevice && !prefersReducedMotion) {
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    const follower = document.createElement('div');
-    follower.className = 'custom-cursor-follower';
-    document.body.appendChild(cursor);
-    document.body.appendChild(follower);
-
-    let mouseX = -100, mouseY = -100;
-    let followerX = -100, followerY = -100;
-
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-    });
-
-    const renderFollower = () => {
-      followerX += (mouseX - followerX) * 0.16;
-      followerY += (mouseY - followerY) * 0.16;
-      follower.style.transform = `translate(${followerX}px, ${followerY}px) translate(-50%, -50%)`;
-      requestAnimationFrame(renderFollower);
-    };
-    requestAnimationFrame(renderFollower);
-
-    // Interactive Hover States
-    const interactiveElements = document.querySelectorAll('a, button, input, select, textarea, .bento-card, .task-card, .how-card, .dropzone-box');
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
-  }
-
-  // 7. Global Modal Management
-  window.openModal = function(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      if (typeof lucide !== 'undefined' && lucide.createIcons) {
-        lucide.createIcons();
-      }
-    }
-  };
-
-  window.closeModal = function(modalId) {
-    const modal = modalId ? document.getElementById(modalId) : document.querySelector('.modal-backdrop.active');
-    if (modal) {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  };
-
-  // Close modals on clicking backdrop or pressing ESC
-  document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal-backdrop')) {
-      window.closeModal();
-    }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      window.closeModal();
+      closeDrawer();
+      modalOverlays.forEach(overlay => closeModal(overlay));
     }
   });
 
-  // Attach close buttons
-  document.querySelectorAll('[data-close-modal]').forEach(btn => {
+  // -------------------------------------------------------------------------
+  // FAQ Accordion
+  // -------------------------------------------------------------------------
+  faqQuestions.forEach(btn => {
     btn.addEventListener('click', () => {
-      const modalId = btn.getAttribute('data-close-modal');
-      window.closeModal(modalId);
+      const item = btn.closest('.faq-item');
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close other open items
+      document.querySelectorAll('.faq-item.active').forEach(openItem => {
+        if (openItem !== item) {
+          openItem.classList.remove('active');
+          const otherBtn = openItem.querySelector('.faq-question');
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Toggle current
+      if (isExpanded) {
+        item.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        item.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
-  // 8. Demo Notice Toast Utility
-  window.showDemoToast = function(message = 'Demonstration action recorded.') {
-    let toast = document.getElementById('demo-toast');
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.id = 'demo-toast';
-      toast.style.cssText = `
-        position: fixed;
-        bottom: 28px;
-        left: 50%;
-        transform: translateX(-50%) translateY(20px);
-        background: rgba(14, 14, 14, 0.95);
-        color: #FFFFFF;
-        border: 1px solid #242424;
-        border-radius: 9999px;
-        padding: 10px 22px;
-        font-size: 0.88rem;
-        font-weight: 500;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-        z-index: 99999;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-        backdrop-filter: blur(16px);
-      `;
-      document.body.appendChild(toast);
-    }
-    toast.innerHTML = `<span style="width: 8px; height: 8px; border-radius: 50%; background: #00E599; display: inline-block;"></span>${message}`;
-    toast.style.opacity = '1';
-    toast.style.visibility = 'visible';
-    toast.style.transform = 'translateX(-50%) translateY(0)';
+  // -------------------------------------------------------------------------
+  // Task Category Filtering
+  // -------------------------------------------------------------------------
+  taskFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      taskFilterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
 
-    clearTimeout(window.toastTimer);
-    window.toastTimer = setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.visibility = 'hidden';
-      toast.style.transform = 'translateX(-50%) translateY(20px)';
-    }, 3200);
-  };
-
-  // 9. Fast Instant Video Loader & Playback Prioritization
-  window.initSmartVideos = function() {
-    const smartWrappers = document.querySelectorAll('.video-wrapper-smart');
-
-    // 1. Immediately prioritize and start Hero video
-    const heroVideo = document.querySelector('.hero-video');
-    if (heroVideo) {
-      heroVideo.muted = true;
-      const playPromise = heroVideo.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay fallback: retry on first interaction
-          const unlock = () => {
-            heroVideo.play();
-            window.removeEventListener('click', unlock);
-            window.removeEventListener('touchstart', unlock);
-          };
-          window.addEventListener('click', unlock, { once: true });
-          window.addEventListener('touchstart', unlock, { once: true });
-        });
-      }
-    }
-
-    // 2. Set up fast reveals for all videos
-    smartWrappers.forEach(wrapper => {
-      const video = wrapper.querySelector('video');
-      const loader = wrapper.querySelector('.video-logo-loader');
-      if (!video) return;
-
-      const hideLoader = () => {
-        if (loader) loader.classList.add('hidden');
-      };
-
-      // If already playing or has frames, hide loader immediately
-      if (video.currentTime > 0 || video.readyState >= 2) {
-        hideLoader();
-      }
-
-      video.addEventListener('playing', hideLoader);
-      video.addEventListener('timeupdate', hideLoader, { once: true });
-      video.addEventListener('loadeddata', hideLoader, { once: true });
-      video.addEventListener('canplay', hideLoader, { once: true });
-
-      // Immediate fallback to never block video
-      setTimeout(hideLoader, 1200);
-
-      // 3. For below-the-fold videos, lazy-play when entering viewport to save bandwidth
-      if (!video.classList.contains('hero-video') && 'IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              video.muted = true;
-              video.play().catch(() => {});
-            } else {
-              video.pause();
-            }
-          });
-        }, { rootMargin: '200px 0px' });
-        observer.observe(video);
-      }
-    });
-  };
-  window.initSmartVideos();
-
-  // 10. Interactive Video Switcher (Gallery Tabs for record1 - record5)
-  const videoTabs = document.querySelectorAll('.video-tab-btn');
-  const mainVideo = document.getElementById('cinematic-video-element');
-  const mainVideoWrapper = mainVideo ? mainVideo.closest('.video-wrapper-smart') : null;
-  const mainVideoLoader = mainVideoWrapper ? mainVideoWrapper.querySelector('.video-logo-loader') : null;
-
-  if (videoTabs.length > 0 && mainVideo) {
-    videoTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        videoTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        const videoSrc = tab.getAttribute('data-video');
-        if (videoSrc) {
-          if (mainVideoLoader) mainVideoLoader.classList.remove('hidden');
-          mainVideo.classList.remove('video-loaded');
-
-          mainVideo.src = videoSrc;
-          mainVideo.load();
-          mainVideo.play().catch(e => console.log('Autoplay deferred:', e));
-
-          const onReady = () => {
-            mainVideo.classList.add('video-loaded');
-            if (mainVideoLoader) mainVideoLoader.classList.add('hidden');
-          };
-          mainVideo.addEventListener('loadeddata', onReady, { once: true });
-          mainVideo.addEventListener('canplay', onReady, { once: true });
+      const filter = btn.getAttribute('data-filter');
+      taskCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
         }
       });
     });
-  }
+  });
 
-  // 11. Mobile Phone Mockup Video Switcher
-  window.switchMobileVideo = function(videoSrc, btn) {
-    const mobileVideo = document.getElementById('mobile-preview-video');
-    if (!mobileVideo) return;
-    const wrapper = mobileVideo.closest('.video-wrapper-smart');
-    const loader = wrapper ? wrapper.querySelector('.video-logo-loader') : null;
+  // -------------------------------------------------------------------------
+  // Scroll Actions: Navbar Shadow & Sticky Mobile Bar
+  // -------------------------------------------------------------------------
+  const sections = document.querySelectorAll('section[id]');
+  const desktopNavLinks = document.querySelectorAll('.nav-links a');
 
-    if (btn) {
-      const parent = btn.parentElement;
-      parent.querySelectorAll('button').forEach(b => {
-        b.style.borderColor = 'var(--border-card)';
-        b.style.color = 'var(--text-white)';
-      });
-      btn.style.borderColor = 'var(--accent-green)';
-      btn.style.color = 'var(--accent-green)';
+  function handleScroll() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Navbar scroll effect
+    if (navbar) {
+      if (scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     }
 
-    if (loader) loader.classList.remove('hidden');
-    mobileVideo.classList.remove('video-loaded');
+    // Sticky mobile action bar visibility
+    if (mobileStickyBar && heroSection) {
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      if (scrollY > heroBottom - 200) {
+        mobileStickyBar.classList.add('visible');
+      } else {
+        mobileStickyBar.classList.remove('visible');
+      }
+    }
 
-    mobileVideo.src = videoSrc;
-    mobileVideo.load();
-    mobileVideo.play().catch(e => console.log('Autoplay deferred:', e));
+    // Active navigation highlighting
+    sections.forEach(section => {
+      const sectionHeight = section.offsetHeight;
+      const sectionTop = section.offsetTop - 120;
+      const sectionId = section.getAttribute('id');
 
-    const onReady = () => {
-      mobileVideo.classList.add('video-loaded');
-      if (loader) loader.classList.add('hidden');
-    };
-    mobileVideo.addEventListener('loadeddata', onReady, { once: true });
-    mobileVideo.addEventListener('canplay', onReady, { once: true });
-  };
-
-  // 12. Ensure all videos play reliably across all browsers and devices
-  const forcePlayAllVideos = () => {
-    document.querySelectorAll('video').forEach(video => {
-      video.muted = true;
-      video.setAttribute('playsinline', '');
-      video.setAttribute('muted', '');
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {});
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        desktopNavLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
       }
     });
-  };
+  }
 
-  forcePlayAllVideos();
-  window.addEventListener('load', forcePlayAllVideos);
-  ['click', 'touchstart', 'scroll'].forEach(evt => {
-    window.addEventListener(evt, forcePlayAllVideos, { once: true });
-  });
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Initial check
+
+  // -------------------------------------------------------------------------
+  // Form Handlers
+  // -------------------------------------------------------------------------
+  const loginForm = document.getElementById('loginForm');
+  if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Welcome back to Plus AI! Redirecting to dashboard...');
+      closeModal(loginModal);
+    });
+  }
+
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for contacting Plus AI! Our support team will get in touch shortly.');
+      contactForm.reset();
+    });
+  }
+
+  const uploadForm = document.getElementById('uploadForm');
+  if (uploadForm) {
+    uploadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Video task registration submitted successfully! Our team will send your head mount confirmation.');
+      closeModal(uploadModal);
+    });
+  }
 });
+
+/**
+ * Global helper to update compensation rate across all tags dynamically.
+ * Example in console: window.setPlusAiRate('₹400');
+ */
+window.setPlusAiRate = function(newRate) {
+  document.querySelectorAll('.price-val').forEach(el => {
+    el.textContent = newRate;
+  });
+  console.log(`Plus AI rate updated to: ${newRate}`);
+};

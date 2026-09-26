@@ -2,876 +2,836 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI+ | Complete Tasks. Earn Rewards.</title>
-  <meta name="description" content="AI+ is a premium digital task and rewards platform concept. Discover simple digital tasks, complete activities, submit proof, and explore illustrative rewards.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="theme-color" content="#028853">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Plus AI - Join & Get Paid ₹350/Hour for Your Videos</title>
+  <meta name="description" content="Join Plus AI and earn ₹350 per hour recording short videos for AI and robot training. Flexible hours, work from anywhere in India with instant UPI / bank payouts.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo_clean_trans.png">
 
-  <!-- Open Graph / WhatsApp / Facebook / Telegram / LinkedIn -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="AI+ Platform">
-  <meta property="og:title" content="AI+ | Complete Tasks. Earn Rewards.">
-  <meta property="og:description" content="Discover simple digital tasks, complete activities, submit proof, and explore instant rewards on AI+.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/kapilinania/plusai-/main/assets/images/logo/og-preview.jpg">
-  <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/kapilinania/plusai-/main/assets/images/logo/og-preview.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="AI+ Complete Tasks. Earn Rewards.">
-
-  <!-- Twitter / X Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI+ | Complete Tasks. Earn Rewards.">
-  <meta name="twitter:description" content="Discover simple digital tasks, complete activities, submit proof, and explore instant rewards on AI+.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/kapilinania/plusai-/main/assets/images/logo/og-preview.jpg">
-
-  <!-- Favicon / Touch Icons -->
-  <link rel="icon" type="image/jpeg" href="assets/images/logo/logo.jpeg">
-  <link rel="apple-touch-icon" href="assets/images/logo/og-square.jpg">
-  <link rel="image_src" href="https://raw.githubusercontent.com/kapilinania/plusai-/main/assets/images/logo/og-preview.jpg">
-
-  <!-- Core Stylesheets -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <!-- Ambient background glow lights -->
-  <div class="ambient-glow glow-top-center"></div>
-  <div class="ambient-glow glow-right"></div>
 
-  <!-- Global Sticky Navigation -->
-  <header class="site-header">
+  <!-- ======================================================================
+       HEADER / NAVIGATION BAR
+       ====================================================================== -->
+  <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="brand-link" aria-label="AI+ Home">
-        <img src="assets/images/logo/logo_transparent.png" alt="AI+ Logo" class="brand-logo-img">
-        <span class="brand-text">AI<span class="brand-plus">+</span></span>
-        <span class="brand-badge">PROTOTYPE</span>
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo" aria-label="Plus AI Home">
+        <div class="logo-vector">
+          <!-- Stylized Green Ribbon 'P' Logo -->
+          <svg class="logo-p" viewBox="0 0 32 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="10" height="34" rx="5" fill="#028853" />
+            <path d="M12 2H22C27.5228 2 32 6.47715 32 12C32 17.5228 27.5228 22 22 22H12V2Z" fill="#10b981" />
+            <path d="M7 7H21C23.7614 7 26 9.23858 26 12C26 14.7614 23.7614 17 21 17H7V7Z" fill="#ebfbf4" />
+          </svg>
+          <span class="brand-text">PLUS AI</span>
+        </div>
       </a>
 
-      <!-- Desktop Nav Menu -->
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link active">Home</a></li>
-        <li><a href="tasks.html" class="nav-link">Tasks</a></li>
-        <li><a href="wallet.html" class="nav-link">Wallet</a></li>
-        <li><a href="upload.html" class="nav-link">Upload</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-      </ul>
+      <!-- Desktop Nav Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#tasks">Tasks</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-      <!-- Desktop Nav Actions -->
+      <!-- Right Nav Controls (Login + Hamburger on Mobile) -->
       <div class="nav-actions">
-        <a href="login.html" class="btn-nav-login">Login</a>
-        <a href="register.html" class="btn btn-primary btn-sm btn-nav-cta">Get Started</a>
-        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Drawer">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="btn-login-outline btn-open-login" type="button">Login</button>
+        <button class="btn-hamburger" id="btnHamburger" aria-label="Open Navigation Menu" aria-expanded="false" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
-    <div class="mobile-drawer-backdrop" data-close-drawer></div>
-    <div class="mobile-drawer-panel">
-      <div class="mobile-drawer-header">
-        <a href="index.html" class="brand-link" aria-label="AI+ Home">
-          <img src="assets/images/logo/logo_transparent.png" alt="AI+ Logo" class="brand-logo-img">
-          <span class="brand-text">AI<span class="brand-plus">+</span></span>
-          <span class="brand-badge">PROTOTYPE</span>
-        </a>
-        <button class="mobile-drawer-close" aria-label="Close navigation" data-close-drawer>
-          <i data-lucide="x"></i>
-        </button>
-      </div>
-
-      <div class="mobile-drawer-content">
-        <ul class="mobile-drawer-nav">
-          <li>
-            <a href="index.html" class="mobile-drawer-link active">
-              <span class="drawer-link-left">
-                <i data-lucide="home"></i>
-                <span>Home</span>
-              </span>
-              <i data-lucide="chevron-right" class="drawer-arrow"></i>
-            </a>
-          </li>
-          <li>
-            <a href="tasks.html" class="mobile-drawer-link">
-              <span class="drawer-link-left">
-                <i data-lucide="check-square"></i>
-                <span>Tasks</span>
-              </span>
-              <span class="drawer-badge">16 Active</span>
-              <i data-lucide="chevron-right" class="drawer-arrow"></i>
-            </a>
-          </li>
-          <li>
-            <a href="wallet.html" class="mobile-drawer-link">
-              <span class="drawer-link-left">
-                <i data-lucide="wallet"></i>
-                <span>Wallet</span>
-              </span>
-              <i data-lucide="chevron-right" class="drawer-arrow"></i>
-            </a>
-          </li>
-          <li>
-            <a href="upload.html" class="mobile-drawer-link">
-              <span class="drawer-link-left">
-                <i data-lucide="upload-cloud"></i>
-                <span>Upload Proof</span>
-              </span>
-              <i data-lucide="chevron-right" class="drawer-arrow"></i>
-            </a>
-          </li>
-          <li>
-            <a href="about.html" class="mobile-drawer-link">
-              <span class="drawer-link-left">
-                <i data-lucide="info"></i>
-                <span>About</span>
-              </span>
-              <i data-lucide="chevron-right" class="drawer-arrow"></i>
-            </a>
-          </li>
-        </ul>
-
-        <div class="mobile-drawer-actions">
-          <a href="register.html" class="btn btn-primary btn-block">
-            <span>Get Started Free</span>
-            <i data-lucide="arrow-right"></i>
-          </a>
-          <a href="login.html" class="btn btn-secondary btn-block">
-            <span>Member Login</span>
-          </a>
-        </div>
-
-        <div class="mobile-drawer-footer">
-          <div class="drawer-status-chip">
-            <span class="pill-dot"></span>
-            <span>Platform Prototype • Demonstration Only</span>
-          </div>
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <div class="logo-vector">
+          <svg class="logo-p" viewBox="0 0 32 38" fill="none" style="width:26px; height:30px;" aria-hidden="true">
+            <rect x="2" y="2" width="10" height="34" rx="5" fill="#028853" />
+            <path d="M12 2H22C27.5228 2 32 6.47715 32 12C32 17.5228 27.5228 22 22 22H12V2Z" fill="#10b981" />
+          </svg>
+          <span class="brand-text">PLUS AI</span>
         </div>
       </div>
+      <button class="btn-close-drawer" id="btnCloseDrawer" aria-label="Close Menu" type="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
     </div>
-  </div>
+
+    <ul class="drawer-nav-list">
+      <li><a href="#home">Home <span class="nav-arrow">›</span></a></li>
+      <li><a href="#tasks">Tasks <span class="nav-arrow">›</span></a></li>
+      <li><a href="#how-it-works">How It Works <span class="nav-arrow">›</span></a></li>
+      <li><a href="#about">About <span class="nav-arrow">›</span></a></li>
+      <li><a href="#faq">FAQ <span class="nav-arrow">›</span></a></li>
+      <li><a href="#contact">Contact Us <span class="nav-arrow">›</span></a></li>
+    </ul>
+
+    <div class="drawer-footer">
+      <button class="btn-login-outline btn-open-login" style="width:100%; text-align:center;">Login to Account</button>
+      <button class="btn-primary-green btn-open-upload" style="width:100%; margin-bottom:0;">Start Uploading Videos →</button>
+    </div>
+  </aside>
 
   <main>
-    <!-- ==========================================================================
-         HERO SECTION
-         ========================================================================== -->
-    <section class="hero-section">
-      <div class="container hero-content">
-        <div class="pill-badge hero-eyebrow">
-          <span class="pill-dot"></span>
-          <span>THE DIGITAL REWARDS PLATFORM</span>
+    <!-- ====================================================================
+         HERO SECTION (Responsive Mobile-First + Flyer Precision)
+         ==================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <!-- Top Tag Pill -->
+          <div class="hero-badge-pill">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 4h10a2 2 0 0 1 2 2v2.586l4-2V17.414l-4-2V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+            </svg>
+            <span>Turn Your Videos Into Earnings</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="hero-title">
+            Join Plus AI &amp;
+            <span class="headline-block">Get Paid</span>
+            <span class="price-highlight">₹350/Hour</span>
+            <span class="headline-block">for Your Videos</span>
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="hero-subtitle">
+            We're looking for people like you to create short videos for AI and robot training. It's simple, flexible and pays well!
+          </p>
+
+          <!-- Primary Button -->
+          <div class="hero-cta-group">
+            <button class="btn-primary-green btn-open-upload" type="button">
+              <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h10a2 2 0 0 1 2 2v2.586l4-2V17.414l-4-2V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+              </svg>
+              <span>Start Uploading Videos</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- 3 Perks Row with exact icons -->
+          <div class="hero-perks">
+            <div class="perk-item">
+              <span class="perk-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </span>
+              <span>No special skills required</span>
+            </div>
+
+            <div class="perk-item">
+              <span class="perk-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="2" y1="20" x2="22" y2="20"></line>
+                </svg>
+              </span>
+              <span>Work from anywhere</span>
+            </div>
+
+            <div class="perk-item">
+              <span class="perk-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 3h12M6 8h12M6 13l7.5 8M6 13h4a4 4 0 0 0 0-8"></path>
+                </svg>
+              </span>
+              <span>Get paid in INR</span>
+            </div>
+          </div>
         </div>
 
-        <h1 class="hero-headline">
-          Complete Tasks.<br>
-          <span class="italic-accent">Earn Rewards.</span>
-        </h1>
-
-        <p class="hero-supporting">
-          AI+ connects users with simple digital tasks and earning opportunities — all from one clean, unified platform concept.
-        </p>
-
-        <div class="hero-actions">
-          <a href="register.html" class="btn btn-primary btn-lg">
-            Get Started
-            <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
-          </a>
-          <a href="#how-it-works" class="btn btn-secondary btn-lg">Learn More</a>
-        </div>
-
-        <p class="hero-disclaimer">
-          *Earnings shown are illustrative and depend on available tasks, eligibility and successful completion.
-        </p>
-      </div>
-
-      <!-- Hero Visual: Video Container with Floating Mockup Cards -->
-      <div class="container">
+        <!-- Right Hero Visual (Exact Composition with Cutout & Glowing Rate Badge) -->
         <div class="hero-visual-wrapper">
-          <div class="hero-video-box video-wrapper-smart">
-            <!-- Smart Logo Loader: Displays until video is ready/buffered -->
-            <div class="video-logo-loader">
-              <div class="video-loader-brand">
-                <img src="assets/images/logo/logo_transparent.png" alt="AI+ Preloader" class="video-loader-img">
+          <!-- Organic Mint Wave Behind Woman (Pure SVG) -->
+          <div class="hero-organic-wave-bg" aria-hidden="true">
+            <svg viewBox="0 0 500 550" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M120,40 C280,-10 420,20 480,140 C530,260 510,410 380,490 C260,560 110,510 50,390 C-10,270 10,130 120,40 Z" fill="#d7f6e4" />
+            </svg>
+          </div>
+
+          <div class="hero-image-box">
+            <!-- Full HD Woman Cutout -->
+            <img src="images/hero_woman_cutout.png" alt="Indian creator wearing phone head mount for video data collection" class="hero-person-img" loading="eager" width="480" height="640">
+
+            <!-- Handwritten playful note (Pure HTML/CSS - font-family: Caveat) -->
+            <div class="hero-handwritten-note">
+              <span>Your Video.</span><br>
+              <span>Real Impact.</span>
+            </div>
+
+            <!-- Radiant Green Coin Badge -->
+            <div class="hero-rate-badge">
+              <div class="badge-rays" aria-hidden="true">
+                <span class="ray ray-1"></span>
+                <span class="ray ray-2"></span>
+                <span class="ray ray-3"></span>
+                <span class="ray ray-4"></span>
               </div>
-              <div class="video-loader-indicator">
-                <div class="video-loader-spinner"></div>
-                <span class="video-loader-text">Loading Experience...</span>
+              <div class="badge-coin-wrap">
+                <svg class="badge-coin-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <ellipse cx="12" cy="6" rx="8" ry="3.5" fill="#fde047" stroke="#ca8a04" stroke-width="1.5" />
+                  <path d="M4 6v5c0 1.93 3.58 3.5 8 3.5s8-1.57 8-3.5V6" fill="#facc15" stroke="#ca8a04" stroke-width="1.5" />
+                  <path d="M4 11v5c0 1.93 3.58 3.5 8 3.5s8-1.57 8-3.5V11" fill="#eab308" stroke="#a16207" stroke-width="1.5" />
+                </svg>
               </div>
+              <span class="badge-amount price-val">₹350</span>
+              <span class="badge-rate">per hour</span>
+              <span class="badge-currency">INR</span>
             </div>
-
-            <video class="hero-video video-smart-element" autoplay muted loop playsinline preload="auto" poster="assets/images/logo/poster_dark.jpg">
-              <source src="assets/videos/record5.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="hero-video-overlay"></div>
-          </div>
-
-          <!-- Floating Card 1: Task Completed -->
-          <div class="floating-card card-left-float">
-            <div class="floating-icon">
-              <i data-lucide="check-circle-2"></i>
-            </div>
-            <div class="floating-info">
-              <span class="floating-title">Task Completed</span>
-              <span class="floating-val val-green">+ ₹40</span>
-            </div>
-            <span class="pill-badge-demo" style="margin-left: 6px;">DEMO</span>
-          </div>
-
-          <!-- Floating Card 2: Today's Activity -->
-          <div class="floating-card card-center-float">
-            <div class="floating-icon" style="color: #FFFFFF;">
-              <i data-lucide="activity"></i>
-            </div>
-            <div class="floating-info">
-              <span class="floating-title">Today's Activity</span>
-              <span class="floating-val">3 Tasks Approved</span>
-            </div>
-            <span class="pill-badge-demo" style="margin-left: 6px;">SAMPLE</span>
-          </div>
-
-          <!-- Floating Card 3: Available Balance -->
-          <div class="floating-card card-right-float">
-            <div class="floating-icon">
-              <i data-lucide="wallet"></i>
-            </div>
-            <div class="floating-info">
-              <span class="floating-title">Available Balance</span>
-              <span class="floating-val">₹1,250</span>
-            </div>
-            <span class="pill-badge-demo" style="margin-left: 6px;">MOCKUP</span>
           </div>
         </div>
+
+      </div>
+      
+      <!-- Sweeping Organic Bottom Wave (Pure SVG / CSS) -->
+      <div class="hero-bottom-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 130" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M450,110 C620,110 740,65 920,55 C1100,45 1250,90 1440,130" stroke="#028853" stroke-width="2.5" stroke-opacity="0.25" fill="none" />
+          <path d="M0,130 L0,110 C450,110 740,65 920,55 C1100,45 1250,90 1440,130 L1440,130 L0,130 Z" fill="#ffffff" />
+        </svg>
       </div>
     </section>
 
-    <!-- ==========================================================================
-         SOCIAL PROOF / VALUE MARQUEE STRIP
-         ========================================================================== -->
-    <div class="marquee-strip">
-      <div class="marquee-track">
-        <span class="marquee-item">Simple Tasks <span class="marquee-bullet"></span></span>
-        <span class="marquee-item">Flexible Work <span class="marquee-bullet"></span></span>
-        <span class="marquee-item">Digital Rewards <span class="marquee-bullet"></span></span>
-        <span class="marquee-item">Easy Submission <span class="marquee-bullet"></span></span>
-        <span class="marquee-item">Transparent Process <span class="marquee-bullet"></span></span>
-        <span class="marquee-item">Work From Anywhere <span class="marquee-bullet"></span></span>
-        <!-- Duplicated for seamless infinite marquee loop -->
-        <span class="marquee-item">Simple Tasks <span class="marquee-bullet"></span></span>
-        <span class="marquee-item">Flexible Work <span class="marquee-bullet"></span></span>
-        <span class="marquee-item">Digital Rewards <span class="marquee-bullet"></span></span>
-        <span class="marquee-item">Easy Submission <span class="marquee-bullet"></span></span>
-        <span class="marquee-item">Transparent Process <span class="marquee-bullet"></span></span>
-        <span class="marquee-item">Work From Anywhere <span class="marquee-bullet"></span></span>
+    <!-- ====================================================================
+         SECTION: TRUST & SOCIAL PROOF STRIP
+         ==================================================================== -->
+    <div class="trust-bar-section">
+      <div class="container">
+        <div class="trust-bar-grid">
+          <div class="trust-pill">
+            <span class="trust-star">⭐</span>
+            <div class="trust-text">
+              <strong>4.9 / 5 Rating</strong>
+              <span>from 2,400+ Indian creators</span>
+            </div>
+          </div>
+          <div class="trust-pill">
+            <span class="trust-icon">⚡</span>
+            <div class="trust-text">
+              <strong>Weekly UPI &amp; Bank Transfers</strong>
+              <span>Instant payouts in ₹ INR</span>
+            </div>
+          </div>
+          <div class="trust-pill">
+            <span class="trust-icon">🔒</span>
+            <div class="trust-text">
+              <strong>100% Privacy-Preserving</strong>
+              <span>Automated bystander face blurring</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- ==========================================================================
-         HOW IT WORKS
-         ========================================================================== -->
-    <section class="section-how" id="how-it-works">
+    <!-- ====================================================================
+         SECTION: HOW IT WORKS
+         ==================================================================== -->
+    <section class="how-it-works-section" id="how-it-works">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="pill-badge">THE WORKFLOW</div>
-          <h2 class="section-title">How AI+ Works</h2>
-          <p class="section-subtitle">Simple steps. Clear process. Designed for effortless participation.</p>
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="title-dash"></span>
+            <h2 class="section-title">How It Works</h2>
+          </div>
+          <p class="section-subtitle">Getting started is easy. Just follow these simple steps:</p>
         </div>
 
-        <div class="how-grid stagger-reveal">
-          <!-- Step 01 -->
-          <div class="how-card">
-            <div class="how-step-num">01</div>
-            <h3 class="how-step-title">Discover a Task</h3>
-            <p class="how-step-desc">Explore available digital tasks across social media, surveys, app testing, and quick digital checks.</p>
+        <!-- 4 Step Process Cards Flow -->
+        <div class="steps-flow">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-num-badge">1</div>
+            <div class="step-icon-circle">
+              <!-- Person / User Icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/>
+              </svg>
+            </div>
+            <h3 class="step-title">Join</h3>
+            <p class="step-desc">Sign up on our platform in just a few minutes.</p>
           </div>
 
-          <!-- Step 02 -->
-          <div class="how-card">
-            <div class="how-step-num">02</div>
-            <h3 class="how-step-title">Complete the Task</h3>
-            <p class="how-step-desc">Follow the step-by-step instructions provided with each activity at your own convenience.</p>
+          <div class="step-arrow" aria-hidden="true">→</div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-num-badge">2</div>
+            <div class="step-icon-circle">
+              <!-- Smartphone Icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+              </svg>
+            </div>
+            <h3 class="step-title">Upload Videos</h3>
+            <p class="step-desc">Record short videos using your phone and head mount.</p>
           </div>
 
-          <!-- Step 03 -->
-          <div class="how-card">
-            <div class="how-step-num">03</div>
-            <h3 class="how-step-title">Submit Your Proof</h3>
-            <p class="how-step-desc">Upload screenshots, verification images, or brief completion details directly through the dashboard.</p>
+          <div class="step-arrow" aria-hidden="true">→</div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-num-badge">3</div>
+            <div class="step-icon-circle">
+              <!-- Cloud Upload Icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+              </svg>
+            </div>
+            <h3 class="step-title">Get Approved</h3>
+            <p class="step-desc">Our team reviews your videos for quality.</p>
           </div>
 
-          <!-- Step 04 -->
-          <div class="how-card">
-            <div class="how-step-num">04</div>
-            <h3 class="how-step-title">Receive Rewards</h3>
-            <p class="how-step-desc">Once reviewed and approved, the illustrative reward amount is credited to your balance.</p>
+          <div class="step-arrow" aria-hidden="true">→</div>
+
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-num-badge">4</div>
+            <div class="step-icon-circle">
+              <!-- Stack of Coins Icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 3.79 2 6v12c0 2.21 4.48 4 10 4s10-1.79 10-4V6c0-2.21-4.48-4-10-4zm0 2c4.42 0 8 1.34 8 3s-3.58 3-8 3-8-1.34-8-3 3.58-3 8-3zm0 16c-4.42 0-8-1.34-8-3v-2.15c1.95 1.31 4.86 2.15 8 2.15s6.05-.84 8-2.15V17c0 1.66-3.58 3-8 3zm0-5c-4.42 0-8-1.34-8-3v-2.15c1.95 1.31 4.86 2.15 8 2.15s6.05-.84 8-2.15V12c0 1.66-3.58 3-8 3z"/>
+              </svg>
+            </div>
+            <h3 class="step-title">Earn</h3>
+            <p class="step-desc">Get paid ₹350 per hour for your approved videos.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==========================================================================
-         TASK CONCEPT (BENTO GRID)
-         ========================================================================== -->
-    <section class="section-tasks-concept">
+    <!-- ====================================================================
+         SECTION: 5 FEATURE HIGHLIGHTS (In soft mint container)
+         ==================================================================== -->
+    <section class="features-section">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="pill-badge">OPPORTUNITIES</div>
-          <h2 class="section-title">Small Tasks. Simple Rewards.</h2>
-          <p class="section-subtitle">Browse demonstration task categories curated for simple online participation.</p>
-        </div>
-
-        <div class="bento-grid-tasks stagger-reveal">
+        <div class="features-container-card">
           <!-- Card 1 -->
-          <div class="bento-card">
-            <div class="bento-card-top">
-              <div class="bento-icon-box">
-                <i data-lucide="share-2"></i>
-              </div>
-              <span class="pill-badge-demo">DEMO TASK</span>
+          <div class="feature-box">
+            <div class="feature-icon-circle">
+              <!-- Rupee Coin Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true">
+                <path d="M6 3h12M6 8h12M6 13l7.5 8M6 13h4a4 4 0 0 0 0-8"></path>
+              </svg>
             </div>
-            <div class="bento-card-body">
-              <h3>Social Media Activity</h3>
-              <p>Complete a simple social media activity such as following a profile or sharing content.</p>
-            </div>
-            <div class="bento-card-bottom">
-              <span class="bento-reward-label">Example Reward</span>
-              <span class="bento-reward-val">₹20</span>
-            </div>
+            <h4 class="feature-title">Great Pay</h4>
+            <p class="feature-desc">₹350 per hour INR</p>
           </div>
 
           <!-- Card 2 -->
-          <div class="bento-card">
-            <div class="bento-card-top">
-              <div class="bento-icon-box">
-                <i data-lucide="clipboard-list"></i>
-              </div>
-              <span class="pill-badge-demo">DEMO TASK</span>
+          <div class="feature-box">
+            <div class="feature-icon-circle">
+              <!-- Calendar Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
             </div>
-            <div class="bento-card-body">
-              <h3>Opinion Survey</h3>
-              <p>Answer a short multi-question feedback survey regarding digital user preferences.</p>
-            </div>
-            <div class="bento-card-bottom">
-              <span class="bento-reward-label">Example Reward</span>
-              <span class="bento-reward-val">₹35</span>
-            </div>
+            <h4 class="feature-title">Flexible Hours</h4>
+            <p class="feature-desc">Work at your own pace</p>
           </div>
 
           <!-- Card 3 -->
-          <div class="bento-card">
-            <div class="bento-card-top">
-              <div class="bento-icon-box">
-                <i data-lucide="smartphone"></i>
-              </div>
-              <span class="pill-badge-demo">DEMO TASK</span>
+          <div class="feature-box">
+            <div class="feature-icon-circle">
+              <!-- Globe Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
             </div>
-            <div class="bento-card-body">
-              <h3>App Testing</h3>
-              <p>Install and test key functions on a mobile application and provide simple feedback.</p>
-            </div>
-            <div class="bento-card-bottom">
-              <span class="bento-reward-label">Example Reward</span>
-              <span class="bento-reward-val">₹50</span>
-            </div>
+            <h4 class="feature-title">Work From Anywhere</h4>
+            <p class="feature-desc">All you need is a phone &amp; head mount</p>
           </div>
 
           <!-- Card 4 -->
-          <div class="bento-card">
-            <div class="bento-card-top">
-              <div class="bento-icon-box">
-                <i data-lucide="globe"></i>
-              </div>
-              <span class="pill-badge-demo">DEMO TASK</span>
+          <div class="feature-box">
+            <div class="feature-icon-circle">
+              <!-- Shield Check Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
             </div>
-            <div class="bento-card-body">
-              <h3>Website Visit</h3>
-              <p>Navigate to a designated URL, inspect page layout, and verify interactive links.</p>
-            </div>
-            <div class="bento-card-bottom">
-              <span class="bento-reward-label">Example Reward</span>
-              <span class="bento-reward-val">₹15</span>
-            </div>
+            <h4 class="feature-title">Trusted Platform</h4>
+            <p class="feature-desc">Safe, secure and reliable</p>
           </div>
 
           <!-- Card 5 -->
-          <div class="bento-card">
-            <div class="bento-card-top">
-              <div class="bento-icon-box">
-                <i data-lucide="file-spreadsheet"></i>
-              </div>
-              <span class="pill-badge-demo">DEMO TASK</span>
+          <div class="feature-box">
+            <div class="feature-icon-circle">
+              <!-- Group / Team Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
             </div>
-            <div class="bento-card-body">
-              <h3>Data Entry</h3>
-              <p>Verify short form submissions and classify digital item attributes accurately.</p>
-            </div>
-            <div class="bento-card-bottom">
-              <span class="bento-reward-label">Example Reward</span>
-              <span class="bento-reward-val">₹30</span>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="bento-card">
-            <div class="bento-card-top">
-              <div class="bento-icon-box">
-                <i data-lucide="check-square"></i>
-              </div>
-              <span class="pill-badge-demo">DEMO TASK</span>
-            </div>
-            <div class="bento-card-body">
-              <h3>Content Review</h3>
-              <p>Check short promotional copy or product listings against clear editorial guidelines.</p>
-            </div>
-            <div class="bento-card-bottom">
-              <span class="bento-reward-label">Example Reward</span>
-              <span class="bento-reward-val">₹45</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 48px;">
-          <a href="tasks.html" class="btn btn-secondary">
-            View All 15+ Tasks
-            <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         WALLET SECTION & DASHBOARD PREVIEW
-         ========================================================================== -->
-    <section class="section-wallet-preview">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="pill-badge">FINANCIAL OVERVIEW</div>
-          <h2 class="section-title">Everything in One Wallet.</h2>
-          <p class="section-subtitle">Real-time reward tracking, clear withdrawal simulations, and complete activity history.</p>
-        </div>
-
-        <div class="wallet-dashboard-mockup reveal-on-scroll">
-          <div class="wallet-top-header">
-            <div class="wallet-user-info">
-              <div class="wallet-avatar">AI</div>
-              <div class="wallet-user-meta">
-                <h4>Demonstration Account</h4>
-                <span>Member ID: #AI-88291 • Prototype Mode</span>
-              </div>
-            </div>
-            <div>
-              <span class="pill-badge-demo" style="font-size: 0.8rem; padding: 6px 14px;">
-                <i data-lucide="shield-check" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i>
-                ILLUSTRATIVE DASHBOARD
-              </span>
-            </div>
-          </div>
-
-          <!-- 3 Stat Cards -->
-          <div class="wallet-stats-grid">
-            <div class="wallet-stat-card">
-              <div class="stat-label">
-                <span>Total Earnings</span>
-                <i data-lucide="trending-up" style="width: 16px; height: 16px; color: var(--accent-green);"></i>
-              </div>
-              <div class="stat-amount" data-counter="2500" data-prefix="₹">₹2,500</div>
-            </div>
-
-            <div class="wallet-stat-card">
-              <div class="stat-label">
-                <span>Available Balance</span>
-                <i data-lucide="wallet" style="width: 16px; height: 16px; color: var(--text-white);"></i>
-              </div>
-              <div class="stat-amount stat-amount-green" data-counter="1250" data-prefix="₹">₹1,250</div>
-            </div>
-
-            <div class="wallet-stat-card">
-              <div class="stat-label">
-                <span>Redeemed</span>
-                <i data-lucide="check-circle" style="width: 16px; height: 16px; color: var(--text-muted);"></i>
-              </div>
-              <div class="stat-amount" data-counter="1250" data-prefix="₹">₹1,250</div>
-            </div>
-          </div>
-
-          <!-- Recent Activity Demo Table -->
-          <div class="wallet-activity-box">
-            <div class="activity-header">
-              <span class="activity-title">Recent Activity</span>
-              <span style="font-size: 0.8rem; color: var(--text-muted);">Last 7 Days (Demo)</span>
-            </div>
-            <div class="activity-list">
-              <div class="activity-item">
-                <div class="activity-meta">
-                  <div class="activity-icon"><i data-lucide="check" style="width: 16px; height: 16px;"></i></div>
-                  <div>
-                    <div class="activity-name">Social Media Task Completed</div>
-                    <div class="activity-time">Today, 2:15 PM • Approved</div>
-                  </div>
-                </div>
-                <div class="activity-reward">+₹40</div>
-              </div>
-
-              <div class="activity-item">
-                <div class="activity-meta">
-                  <div class="activity-icon"><i data-lucide="check" style="width: 16px; height: 16px;"></i></div>
-                  <div>
-                    <div class="activity-name">Product Feedback Survey</div>
-                    <div class="activity-time">Yesterday, 6:40 PM • Approved</div>
-                  </div>
-                </div>
-                <div class="activity-reward">+₹30</div>
-              </div>
-
-              <div class="activity-item">
-                <div class="activity-meta">
-                  <div class="activity-icon"><i data-lucide="check" style="width: 16px; height: 16px;"></i></div>
-                  <div>
-                    <div class="activity-name">Website Verification Visit</div>
-                    <div class="activity-time">2 days ago • Approved</div>
-                  </div>
-                </div>
-                <div class="activity-reward">+₹15</div>
-              </div>
-
-              <div class="activity-item">
-                <div class="activity-meta">
-                  <div class="activity-icon"><i data-lucide="check" style="width: 16px; height: 16px;"></i></div>
-                  <div>
-                    <div class="activity-name">Mobile App Usability Test</div>
-                    <div class="activity-time">3 days ago • Approved</div>
-                  </div>
-                </div>
-                <div class="activity-reward">+₹50</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="wallet-footer-meta">
-            <p style="font-size: 0.82rem; color: var(--text-subtle);">
-              *Illustrative dashboard for demonstration purposes only. No real funds or real banking integrations are involved.
-            </p>
-            <a href="wallet.html" class="btn btn-primary btn-sm">
-              View Wallet
-              <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
-            </a>
+            <h4 class="feature-title">Be Part of Something Big</h4>
+            <p class="feature-desc">Help train the next generation of AI &amp; robots</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==========================================================================
-         INTERACTIVE EARNINGS CALCULATOR
-         ========================================================================== -->
-    <section class="section-calculator">
+    <!-- ====================================================================
+         SECTION: CALL TO ACTION BANNER (Green Rounded Container)
+         ==================================================================== -->
+    <section class="cta-banner-section">
       <div class="container">
-        <div class="calculator-card reveal-on-scroll">
-          <div class="calculator-layout">
-            <div>
-              <div class="pill-badge">EARNING POTENTIAL EXAMPLE</div>
-              <h2 class="section-title" style="text-align: left; margin-bottom: 12px;">How Much Could You Earn?</h2>
-              <p class="section-subtitle" style="text-align: left; margin-bottom: 24px;">
-                Explore an example calculation based on flexible hours and the illustrative reward rate of <strong>up to ₹350/hour*</strong>.
-              </p>
-
-              <!-- Range Slider -->
-              <div class="slider-container">
-                <div class="slider-header">
-                  <span class="slider-label">Dedicated Participation Time</span>
-                  <div class="slider-value-display">
-                    <span id="calc-hours-val">15</span> <span>hours / week</span>
-                  </div>
-                </div>
-                <input type="range" class="calc-slider" id="calc-hours-slider" min="1" max="70" value="15">
-                <div class="slider-ticks">
-                  <span>0 hrs</span>
-                  <span>20 hrs</span>
-                  <span>40 hrs</span>
-                  <span>70 hrs</span>
-                </div>
-              </div>
-
-              <p style="font-size: 0.78rem; color: var(--text-subtle); margin-top: 24px; line-height: 1.5;">
-                *Illustrative maximum promotional example. Actual earnings depend on available tasks, eligibility, task rates and successful completion. No guaranteed income is implied.
-              </p>
+        <div class="cta-banner-card">
+          <div class="cta-banner-left">
+            <div class="cta-camera-icon-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h10a2 2 0 0 1 2 2v2.586l4-2V17.414l-4-2V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+              </svg>
             </div>
-
-            <!-- Dynamic Results -->
-            <div class="calc-results-box">
-              <div class="result-row">
-                <span class="result-title">Illustrative Weekly Estimate</span>
-                <span class="result-val" id="calc-weekly-val">₹5,250</span>
-              </div>
-              <div class="result-row">
-                <span class="result-title">Illustrative Monthly Estimate</span>
-                <span class="result-val result-val-highlight" id="calc-monthly-val">₹22,733</span>
-              </div>
-              <div class="result-row">
-                <span class="result-title">Illustrative Annual Potential</span>
-                <span class="result-val" id="calc-yearly-val">₹2,73,000</span>
-              </div>
-              <a href="register.html" class="btn btn-primary btn-block" style="margin-top: 8px;">
-                Start Exploring Now
-                <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
-              </a>
+            <div class="cta-banner-text">
+              <h3 class="cta-banner-title">Ready to Get Started?</h3>
+              <p class="cta-banner-desc">Join Plus AI today and turn your videos into real income!</p>
             </div>
+          </div>
+
+          <button class="btn-cta-white btn-open-upload" type="button">
+            <span>Start Uploading Videos</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: TASKS (Requested 'Task' Nav Item)
+         ==================================================================== -->
+    <section class="tasks-section" id="tasks">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="title-dash"></span>
+            <h2 class="section-title">Available Video Tasks</h2>
+          </div>
+          <p class="section-subtitle">Pick a task, mount your phone, record first-person video, and get paid ₹350/Hour.</p>
+        </div>
+
+        <!-- Task Category Filters -->
+        <div class="tasks-filter-bar" role="tablist" aria-label="Task categories">
+          <button class="task-filter-btn active" data-filter="all" role="tab" aria-selected="true">All Tasks</button>
+          <button class="task-filter-btn" data-filter="indoor" role="tab" aria-selected="false">Indoor Living</button>
+          <button class="task-filter-btn" data-filter="kitchen" role="tab" aria-selected="false">Kitchen &amp; Cooking</button>
+          <button class="task-filter-btn" data-filter="outdoor" role="tab" aria-selected="false">Outdoor Walking</button>
+        </div>
+
+        <!-- Tasks Grid -->
+        <div class="tasks-grid">
+          <!-- Task 1 -->
+          <div class="task-card" data-category="indoor">
+            <div class="task-card-header">
+              <span class="task-category-tag">Indoor Living</span>
+              <span class="task-payout-tag">₹350 / hr</span>
+            </div>
+            <h4 class="task-card-title">Living Room Object Organizing</h4>
+            <p class="task-card-desc">Record a 30-minute first-person video tidying up cushions, arranging books, and handling remote controls.</p>
+            <div class="task-card-meta">
+              <span>Required: Phone + Head Mount</span>
+              <span>Approval: 24 hrs</span>
+            </div>
+            <button class="btn-task-action btn-open-upload" type="button">Record This Task</button>
+          </div>
+
+          <!-- Task 2 -->
+          <div class="task-card" data-category="kitchen">
+            <div class="task-card-header">
+              <span class="task-category-tag">Kitchen &amp; Cooking</span>
+              <span class="task-payout-tag">₹350 / hr</span>
+            </div>
+            <h4 class="task-card-title">Meal Preparation &amp; Utensil Grip</h4>
+            <p class="task-card-desc">Record everyday Indian kitchen activities: cutting vegetables, using spices, stirring tea, and washing dishes.</p>
+            <div class="task-card-meta">
+              <span>Required: Phone + Head Mount</span>
+              <span>Approval: 24 hrs</span>
+            </div>
+            <button class="btn-task-action btn-open-upload" type="button">Record This Task</button>
+          </div>
+
+          <!-- Task 3 -->
+          <div class="task-card" data-category="outdoor">
+            <div class="task-card-header">
+              <span class="task-category-tag">Outdoor Walking</span>
+              <span class="task-payout-tag">₹350 / hr</span>
+            </div>
+            <h4 class="task-card-title">Neighborhood &amp; Market Walkthrough</h4>
+            <p class="task-card-desc">Walk through local sidewalks, grocery shops, and staircases. Helps train autonomous robot navigation in diverse environments.</p>
+            <div class="task-card-meta">
+              <span>Required: Daytime Daylight</span>
+              <span>Approval: 12 hrs</span>
+            </div>
+            <button class="btn-task-action btn-open-upload" type="button">Record This Task</button>
+          </div>
+
+          <!-- Task 4 -->
+          <div class="task-card" data-category="indoor">
+            <div class="task-card-header">
+              <span class="task-category-tag">Indoor Living</span>
+              <span class="task-payout-tag">₹350 / hr</span>
+            </div>
+            <h4 class="task-card-title">Home Office Desk &amp; Typing Setup</h4>
+            <p class="task-card-desc">Capture hand-eye coordination while opening drawers, typing on keyboards, writing on notebooks, and packing bags.</p>
+            <div class="task-card-meta">
+              <span>Required: Phone + Head Mount</span>
+              <span>Approval: 24 hrs</span>
+            </div>
+            <button class="btn-task-action btn-open-upload" type="button">Record This Task</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==========================================================================
-         MOBILE APP & LIVE WORKFLOW (RECORD3 & RECORD4)
-         ========================================================================== -->
-    <section class="section-app-preview">
+    <!-- ====================================================================
+         SECTION: ABOUT (Requested 'About' Nav Item)
+         ==================================================================== -->
+    <section class="about-section" id="about">
       <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="pill-badge">MOBILE EXPERIENCE</div>
-          <h2 class="section-title">Designed for Any Device.</h2>
-          <p class="section-subtitle">Experience seamless task tracking, micro-activity checks, and instantaneous reward submission on your phone.</p>
-        </div>
-
-        <div class="app-preview-grid reveal-on-scroll">
-          <!-- Left: Phone Mockup Frame running Record3.mp4 -->
-          <div class="phone-mockup-wrapper">
-            <div class="phone-mockup-screen video-wrapper-smart">
-              <div class="phone-notch">
-                <div class="phone-notch-dot"></div>
-              </div>
-
-              <!-- Smart Logo Loader for Mobile Video -->
-              <div class="video-logo-loader">
-                <div class="video-loader-brand">
-                  <img src="assets/images/logo/logo_transparent.png" alt="AI+ Preloader" class="video-loader-img">
-                </div>
-                <div class="video-loader-indicator">
-                  <div class="video-loader-spinner"></div>
-                  <span class="video-loader-text">Loading App...</span>
-                </div>
-              </div>
-
-              <video class="video-smart-element" id="mobile-preview-video" autoplay muted loop playsinline preload="auto" poster="assets/images/logo/poster_mobile.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                <source src="assets/videos/record3.mp4" type="video/mp4">
-              </video>
-            </div>
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="title-dash"></span>
+            <h2 class="section-title">About Plus AI</h2>
           </div>
-
-          <!-- Right: App Highlights & Video Toggle -->
-          <div>
-            <div class="pill-badge">NATIVE APP PREVIEW</div>
-            <h3 style="font-size: 2.2rem; margin-bottom: 16px; letter-spacing: -0.03em;">Complete Tasks On The Go</h3>
-            <p style="margin-bottom: 24px; font-size: 1.05rem;">
-              Whether commuting, relaxing at home, or taking a short break, the AI+ interface is optimized for rapid mobile task execution with zero unnecessary lag.
-            </p>
-
-            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px;">
-              <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-card); border-radius: var(--radius-md);">
-                <i data-lucide="check" style="color: var(--accent-green); width: 20px; height: 20px;"></i>
-                <span style="font-weight: 600;">One-Tap Verification Uploads</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-card); border-radius: var(--radius-md);">
-                <i data-lucide="bell" style="color: var(--accent-green); width: 20px; height: 20px;"></i>
-                <span style="font-weight: 600;">Real-time Approval Notifications</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-card); border-radius: var(--radius-md);">
-                <i data-lucide="shield-check" style="color: var(--accent-green); width: 20px; height: 20px;"></i>
-                <span style="font-weight: 600;">Secure, Transparent Ledger</span>
-              </div>
-            </div>
-
-            <!-- Switch between mobile demo video 3 and 4 -->
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-              <button class="btn btn-secondary btn-sm" onclick="switchMobileVideo('assets/videos/record3.mp4', this)" style="border-color: var(--accent-green); color: var(--accent-green);">
-                <i data-lucide="play" style="width: 14px; height: 14px;"></i> Mobile Recording 1
-              </button>
-              <button class="btn btn-secondary btn-sm" onclick="switchMobileVideo('assets/videos/record4.mp4', this)">
-                <i data-lucide="play" style="width: 14px; height: 14px;"></i> Mobile Recording 2
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         CINEMATIC WORK FROM ANYWHERE & 5-VIDEO INTERACTIVE SHOWCASE
-         ========================================================================== -->
-    <section class="section-cinematic-video">
-      <div class="container">
-        <div class="section-header reveal-on-scroll">
-          <div class="pill-badge">ALL PLATFORM VIDEOS</div>
-          <h2 class="section-title">Work From Anywhere.</h2>
-          <p class="section-subtitle">Switch and explore all 5 recordings demonstrating simple digital tasks, mobile interactions, and the rewards experience.</p>
+          <p class="section-subtitle">Real people empowering next-generation robotics with natural vision.</p>
         </div>
 
-        <!-- Video Gallery Tabs (Switch between all 5 user videos) -->
-        <div class="video-gallery-tabs reveal-on-scroll">
-          <button class="video-tab-btn" data-video="assets/videos/record1.mp4">
-            <i data-lucide="play-circle" style="width: 16px; height: 16px;"></i>
-            01 Walkthrough
-            <span class="video-tab-badge">Video 1</span>
-          </button>
-          <button class="video-tab-btn" data-video="assets/videos/record2.mp4">
-            <i data-lucide="play-circle" style="width: 16px; height: 16px;"></i>
-            02 Task Execution
-            <span class="video-tab-badge">Video 2</span>
-          </button>
-          <button class="video-tab-btn" data-video="assets/videos/record3.mp4">
-            <i data-lucide="play-circle" style="width: 16px; height: 16px;"></i>
-            03 Mobile App UI
-            <span class="video-tab-badge">Video 3</span>
-          </button>
-          <button class="video-tab-btn" data-video="assets/videos/record4.mp4">
-            <i data-lucide="play-circle" style="width: 16px; height: 16px;"></i>
-            04 Submissions
-            <span class="video-tab-badge">Video 4</span>
-          </button>
-          <button class="video-tab-btn active" data-video="assets/videos/record5.mp4">
-            <i data-lucide="play-circle" style="width: 16px; height: 16px;"></i>
-            05 Cinematic Showcase
-            <span class="video-tab-badge">Video 5</span>
-          </button>
-        </div>
-
-        <!-- Video Player Display with Custom Controls & Smart Logo Loader -->
-        <div class="cinematic-video-container video-wrapper-smart reveal-on-scroll">
-          <!-- Smart Logo Loader Fallback: Displays when loading/switching videos -->
-          <div class="video-logo-loader">
-            <div class="video-loader-brand">
-              <img src="assets/images/logo/logo_transparent.png" alt="AI+ Preloader" class="video-loader-img">
-            </div>
-            <div class="video-loader-indicator">
-              <div class="video-loader-spinner"></div>
-              <span class="video-loader-text">Loading Video Stream...</span>
-            </div>
-          </div>
-
-          <video class="cinematic-video video-smart-element" id="cinematic-video-element" autoplay muted loop playsinline preload="auto" poster="assets/images/logo/poster_dark.jpg">
-            <source src="assets/videos/record5.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
-          <div class="cinematic-overlay"></div>
-
-          <!-- Controls bar -->
-          <div class="video-player-controls">
-            <button class="video-btn" id="video-toggle-play" aria-label="Play or Pause Video">
-              <i data-lucide="pause"></i>
-            </button>
-            <div class="video-progress-bar" id="video-progress-container">
-              <div class="video-progress-fill" id="video-progress-fill"></div>
-            </div>
-            <span class="video-time-display" id="video-time-text">0:00 / 0:15</span>
-            <button class="video-btn" id="video-toggle-mute" aria-label="Mute or Unmute Audio">
-              <i data-lucide="volume-x"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- English Remote Work Feature Card (No Hindi) -->
-        <div class="promo-banner-card reveal-on-scroll">
-          <div class="promo-banner-text">
-            <h3>Looking to Work From Anywhere?</h3>
+        <div class="about-grid">
+          <div class="about-text">
+            <h3>Why Do AI &amp; Robotics Companies Need Your Videos?</h3>
             <p>
-              Explore simple digital tasks with AI+ and discover opportunities to complete activities remotely on your own schedule.
+              Leading artificial intelligence labs and humanoid robot manufacturers require millions of hours of realistic first-person (egocentric) video data. When you wear a phone mounted to your forehead, the camera captures exactly what human eyes see and how human hands interact with real-world objects.
             </p>
-            <div class="promo-rate-highlight">
-              Up to ₹350 per hour* illustrative example
-            </div>
-            <p style="font-size: 0.78rem; color: var(--text-subtle); margin-top: 10px;">
-              *Earnings depend on task availability, eligibility, task rates, and successful completion. This is an illustrative example, not guaranteed income.
+            <p>
+              Plus AI bridges Indian creators and global AI research labs, offering verified payouts directly to your Indian bank account or UPI at <strong>₹350 per approved hour</strong>.
             </p>
+            <ul class="about-perks-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Free head mount guidance and setup support</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Instant UPI &amp; direct NEFT / IMPS bank transfers in INR</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                <span>Strict privacy guidelines: face blurring &amp; zero personal data leakage</span>
+              </li>
+            </ul>
           </div>
-          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-            <a href="register.html" class="btn btn-primary btn-lg">Get Started Now →</a>
-            <a href="about.html" class="btn btn-secondary btn-lg">See How AI+ Works</a>
+
+          <div class="about-banner-card">
+            <div class="about-metric">
+              <span class="number">₹350</span>
+              <span class="label">Guaranteed hourly compensation in INR</span>
+            </div>
+            <div class="about-metric">
+              <span class="number">100%</span>
+              <span class="label">Flexible schedule — record when you want</span>
+            </div>
+            <div class="about-metric">
+              <span class="number">24 Hrs</span>
+              <span class="label">Rapid video quality verification &amp; payout release</span>
+            </div>
+            <button class="btn-primary-green btn-open-upload" style="margin-top:10px; margin-bottom:0;" type="button">
+              Start Earning Today →
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==========================================================================
-         CALL TO ACTION SECTION
-         ========================================================================== -->
-    <section class="section-cta">
+    <!-- ====================================================================
+         SECTION: FAQ (FREQUENTLY ASKED QUESTIONS) - Highly Professional
+         ==================================================================== -->
+    <section class="faq-section" id="faq">
       <div class="container">
-        <div class="cta-box reveal-on-scroll">
-          <h2 class="cta-headline">Ready to Explore AI+?</h2>
-          <p class="cta-desc">
-            Discover digital tasks, submit proof of completion, and experience the modern digital rewards prototype.
-          </p>
-          <div class="cta-actions">
-            <a href="register.html" class="btn btn-primary btn-lg">Get Started</a>
-            <a href="tasks.html" class="btn btn-secondary btn-lg">Explore Tasks</a>
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="title-dash"></span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+          </div>
+          <p class="section-subtitle">Everything you need to know about recording tasks, equipment, and payments.</p>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What phone and camera quality do I need?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Any smartphone running Android or iOS with a working rear camera capable of recording standard 1080p (Full HD) video at 30 frames per second is eligible. Popular models include Samsung Galaxy, Redmi, Realme, OnePlus, Vivo, Oppo, and iPhones.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How do I get the phone head mount?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can use standard, inexpensive elastic phone head-strap mounts available on Amazon or Flipkart (costing ~₹250-₹350). When you sign up and pass our brief camera test, Plus AI can also reimburse the mount or send an official starter kit directly to your address!</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How and when do I receive payment?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Payments are calculated at ₹350 per verified recording hour. Payouts are processed weekly directly to your Indian bank account via IMPS/NEFT or to your preferred UPI ID (Google Pay, PhonePe, Paytm, BHIM).</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How is my personal privacy and safety protected?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Your privacy is strictly safeguarded. Our AI ingest system automatically detects and blurs bystander faces, car license plates, and sensitive documents. We never sell personal contact data to third parties.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Is there a minimum or maximum limit on recording hours?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You have 100% flexibility! You can record for as little as 30 minutes on weekends or up to 20+ hours a week depending on task availability in your dashboard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: CONTACT US (Requested 'Contact Us' Nav Item)
+         ==================================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="title-dash"></span>
+            <h2 class="section-title">Contact Us</h2>
+          </div>
+          <p class="section-subtitle">Have questions about head mounts, video guidelines, or payments? We're here to help.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-cards">
+            <div class="contact-item-card">
+              <div class="contact-icon-bubble">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+              </div>
+              <div class="contact-item-details">
+                <h4>Email Support</h4>
+                <p>support@plusai.in (Response within 2 hours)</p>
+              </div>
+            </div>
+
+            <div class="contact-item-card">
+              <div class="contact-icon-bubble">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+              </div>
+              <div class="contact-item-details">
+                <h4>WhatsApp Helpdesk</h4>
+                <p>+91 98765 43210 (Mon - Sat, 9 AM - 7 PM IST)</p>
+              </div>
+            </div>
+
+            <div class="contact-item-card">
+              <div class="contact-icon-bubble">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+              </div>
+              <div class="contact-item-details">
+                <h4>Operations Center</h4>
+                <p>Bengaluru &amp; Hyderabad AI Training Hubs, India</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Inquiry Form -->
+          <div class="contact-form-card">
+            <h4>Send Us a Message</h4>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="contactName">Full Name</label>
+                <input type="text" id="contactName" class="form-control" placeholder="Enter your full name" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email or Phone Number</label>
+                <input type="text" id="contactEmail" class="form-control" placeholder="Enter email or WhatsApp phone" autocomplete="email" required>
+              </div>
+              <div class="form-group">
+                <label for="contactMessage">How can we help you?</label>
+                <textarea id="contactMessage" class="form-control" placeholder="Ask about phone mounts, recording tasks, or payment details..." rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn-form-submit">Submit Message</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ==========================================================================
-       GLOBAL FOOTER
-       ========================================================================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="index.html" class="brand-link" style="margin-bottom: 12px;">
-            <img src="assets/images/logo/logo_transparent.png" alt="AI+ Logo" class="brand-logo-img">
-            <span class="brand-text">AI<span class="brand-plus">+</span></span>
-          </a>
-          <p>Simple digital tasks. Transparent rewards concept. Engineered for modern online participation.</p>
-        </div>
-
-        <div class="footer-col">
-          <h5>Platform</h5>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="tasks.html">Tasks</a></li>
-            <li><a href="wallet.html">Wallet</a></li>
-            <li><a href="upload.html">Upload Proof</a></li>
-            <li><a href="about.html">About AI+</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Account</h5>
-          <ul class="footer-links">
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="wallet.html">Earnings</a></li>
-            <li><a href="upload.html">Submissions</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Legal & Info</h5>
-          <ul class="footer-links">
-            <li><a href="about.html#transparency">Disclaimer</a></li>
-            <li><a href="about.html#transparency">Terms of Service</a></li>
-            <li><a href="about.html#transparency">Privacy Policy</a></li>
-            <li><a href="about.html">Contact Us</a></li>
-          </ul>
-        </div>
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="footer-section">
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <svg class="logo-p" viewBox="0 0 32 38" fill="none" style="width:20px; height:24px;" aria-hidden="true">
+          <rect x="2" y="2" width="10" height="34" rx="5" fill="#028853" />
+          <path d="M12 2H22C27.5228 2 32 6.47715 32 12C32 17.5228 27.5228 22 22 22H12V2Z" fill="#10b981" />
+        </svg>
+        <span class="brand-text">PLUS AI</span>
       </div>
 
-      <div class="footer-bottom">
-        <div>© 2026 AI+. All rights reserved.</div>
-        <div class="footer-demo-pill">Informational Static UI Prototype • Not Real Financial Services</div>
-      </div>
+      <span class="footer-divider" aria-hidden="true">|</span>
+
+      <span class="footer-tagline">Real People. Real Videos. A Smarter Future.</span>
     </div>
   </footer>
 
-  <!-- External Libraries -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- ======================================================================
+       STICKY MOBILE QUICK ACTION BAR (Boosts mobile conversions)
+       ====================================================================== -->
+  <aside class="mobile-sticky-action-bar" id="mobileStickyBar" aria-label="Quick Action">
+    <div class="sticky-bar-info">
+      <span class="sticky-rate price-val">₹350/hr</span>
+      <span class="sticky-sub">Weekly Payouts</span>
+    </div>
+    <button class="btn-sticky-cta btn-open-upload" type="button">
+      Start Earning →
+    </button>
+  </aside>
 
-  <!-- Project Scripts -->
+  <!-- ======================================================================
+       MODAL: LOGIN
+       ====================================================================== -->
+  <div class="modal-overlay" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <div class="modal-card">
+      <button class="btn-modal-close" aria-label="Close dialog">✕</button>
+      <h3 class="modal-title" id="loginTitle">Welcome to Plus AI</h3>
+      <p class="modal-subtitle">Log in to view your video tasks and check earnings.</p>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginPhone">Phone Number / Email</label>
+          <input type="text" id="loginPhone" class="form-control" placeholder="Enter your 10-digit mobile number" inputmode="tel" autocomplete="username" required>
+        </div>
+        <div class="form-group">
+          <label for="loginOtp">Verification Code (OTP)</label>
+          <input type="password" id="loginOtp" class="form-control" placeholder="Enter OTP or Password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn-form-submit" style="margin-top:16px;">Sign In to Plus AI</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MODAL: UPLOAD / START RECORDING
+       ====================================================================== -->
+  <div class="modal-overlay" id="uploadModal" role="dialog" aria-modal="true" aria-labelledby="uploadTitle">
+    <div class="modal-card">
+      <button class="btn-modal-close" aria-label="Close dialog">✕</button>
+      <h3 class="modal-title" id="uploadTitle">Start Uploading Videos</h3>
+      <p class="modal-subtitle">Register your phone &amp; get approved to earn ₹350/Hour.</p>
+      
+      <form id="uploadForm">
+        <div class="form-group">
+          <label for="regName">Full Name</label>
+          <input type="text" id="regName" class="form-control" placeholder="Your full name" autocomplete="name" required>
+        </div>
+        <div class="form-group">
+          <label for="regPhone">WhatsApp Number</label>
+          <input type="tel" id="regPhone" class="form-control" placeholder="10-digit mobile number" inputmode="tel" autocomplete="tel" required>
+        </div>
+        <div class="form-group">
+          <label for="phoneModel">Your Smartphone Model</label>
+          <input type="text" id="phoneModel" class="form-control" placeholder="e.g. Samsung M34, Redmi Note 12, iPhone" required>
+        </div>
+        <div class="form-group">
+          <label for="headMount">Do you have a phone head mount?</label>
+          <select id="headMount" class="form-control">
+            <option value="yes">Yes, I already have one</option>
+            <option value="need">No, send me head mount instructions/kit</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-form-submit" style="margin-top:16px;">Submit &amp; Start Earning ₹350/hr</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
   <script src="js/main.js"></script>
-  <script src="js/animations.js"></script>
 </body>
 </html>
