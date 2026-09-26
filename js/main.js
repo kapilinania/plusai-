@@ -60,7 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileDrawer.classList.toggle('open', isOpen);
       mobileToggle.classList.toggle('active', isOpen);
       mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+        document.body.classList.add('drawer-open');
+      } else {
+        document.body.style.overflow = '';
+        document.body.classList.remove('drawer-open');
+      }
 
       if (isOpen && typeof lucide !== 'undefined' && lucide.createIcons) {
         lucide.createIcons();
